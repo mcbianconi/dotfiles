@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Buser related env
+if [ -f ~/.buser_env ]; then
+    . ~/.buser_env
+fi
+
+export EDITOR=vim
+export BROWSER=chromium
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/code/go
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias vim=nvim
+alias ls='ls --color=auto'
+alias grep='grep -i --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias staff='tmuxinator start buser_staff'
+alias stop_staff='tmuxinator stop buser_staff'
+alias bvenv='source ~/.virtualenvs/buser_django-ZKw3w-eU/bin/activate'
+
+# Tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator

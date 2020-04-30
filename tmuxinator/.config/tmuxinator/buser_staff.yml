@@ -1,0 +1,20 @@
+# /home/mcbianconi/.config/tmuxinator/buser.yml
+
+name: staff
+root: ~/code/buser_django
+
+on_project_stop: docker stop $(docker ps -a -q)
+
+startup_window: frontend
+
+startup_pane: 1
+
+windows:
+  - fronted:
+      panes:
+        - cd ../buser_staff/staff && nvm use && yarn dev
+        - source ~/.virtualenvs/buser_django-ZKw3w-eU/bin/activate && python ./manage.py runserver
+  - backend:
+      panes:
+        - docker-compose -f docker/compose/nginx.yaml up
+        - source dev.sh && dkdb 

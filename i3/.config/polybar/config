@@ -1,0 +1,177 @@
+[colors]
+background = #202124
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #24D1E7
+secondary = #e60053
+alert = #24D1E7
+
+bar-blue = #00D7D7
+bar-purple = #975CFF
+bar-red = #EF3895
+
+[bar/main]
+monitor = ${env:MONITOR:eDP-1}
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 22
+radius = 0.0
+fixed-center = true
+dpi = 210
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 0
+line-color = #f00
+border-size = 0
+border-color = #01AB84
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+font-0 = Hack Nerd Font:style=Regular:size=5;2
+font-1 = FiraCode Nerd Font:style=Regular:size=7;2
+font-2 = GoMono Nerd Font:style=Regular:size=7;2
+font-3 = Consolas:size=7;2
+modules-left = i3
+modules-center =
+modules-right = format-1 bar_weather format-2 pulseaudio format-3 bar_load format-4 bar_wifi format-5 bar_battery format-6 bar_date format-7 bar_time
+;modules-right = bar_weather pulseaudio bar_load bar_wifi bar_battery bar_date format-7 bar_time
+tray-padding = 2
+tray-position = right
+tray-detached = false
+tray-maxsize = 20
+tray-backgrond = ${colors.background}
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/bar_load]
+type = custom/script
+exec = /home/mcbianconi/scripts/bar/load.sh
+interval = 1
+
+[module/bar_wifi]
+type = custom/script
+exec = /home/mcbianconi/scripts/bar/wifi.sh
+interval = 1
+
+[module/bar_battery]
+type = custom/script
+exec = /home/mcbianconi/scripts/bar/batt.sh
+interval = 1
+
+[module/bar_date]
+type = custom/script
+exec = /home/mcbianconi/scripts/bar/date.sh
+interval = 1
+
+[module/bar_time]
+type = custom/script
+exec = /home/mcbianconi/scripts/bar/time.sh
+interval = 1
+
+[module/bar_weather]
+type = custom/script
+exec = /home/mcbianconi/scripts/bar/weather.sh
+interval = 900
+
+[module/format-1]
+type = custom/text
+content = " "
+content-foreground = ${colors.bar-blue}
+content-background = ${colors.background}
+content-font = 2
+
+[module/format-2]
+type = custom/text
+content = " "
+content-foreground = ${colors.bar-blue}
+content-background = ${colors.bar-purple}
+content-font = 2
+
+[module/format-3]
+type = custom/text
+content = " "
+content-foreground = ${colors.bar-purple}
+content-background = ${colors.bar-red}
+content-font = 2
+
+[module/format-4]
+type = custom/text
+content = " "
+content-foreground = ${colors.bar-red}
+content-background = ${colors.bar-blue}
+content-font = 2
+
+[module/format-5]
+type = custom/text
+content = " "
+content-foreground = ${colors.bar-blue}
+content-background = ${colors.bar-purple}
+content-font = 2
+
+[module/format-6]
+type = custom/text
+content = " "
+content-foreground = ${colors.bar-purple}
+content-background = ${colors.bar-red}
+content-font = 2
+
+[module/format-7]
+type = custom/text
+content = " "
+content-foreground = ${colors.bar-red}
+content-background = ${colors.bar-blue}
+content-font = 2
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+label-focused = %index%
+label-focused-background = ${colors.background}
+label-focused-foreground = #24D1E7
+label-focused-padding = 1
+label-unfocused = %index%
+label-unfocused-foreground = #FFFFFF
+label-unfocused-padding = 1
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.background}
+label-urgent-padding = 1
+
+[module/pulseaudio]
+type = internal/pulseaudio
+interval = 5
+use-ui-max = false
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${colors.bar-purple}
+label-volume = %percentage%%
+label-volume-foreground = #202124
+label-muted = 
+label-muted-background = ${colors.bar-purple}
+label-muted-foreground = #202124
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = #202124
+ramp-headphones-0 = 
+ramp-headphones-foreground = #202124
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+;vim:filetype=dosini
