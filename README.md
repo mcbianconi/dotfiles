@@ -1,4 +1,4 @@
 # dotfiles
-Dotfiles. Intended to be managed with GNU Stow except 
+Dotfiles. Intended to be managed with GNU Stow 
 ---
 ![screenshot](screenshot.png)
