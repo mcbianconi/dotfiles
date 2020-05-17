@@ -10,16 +10,16 @@ function battery() {
     local battery_status=$(cat /sys/class/power_supply/BAT0/status)
     case "${battery_status}" in
         "Charging")
-            local symbol=" "
+            local symbol=""
             ;;
         "Discharging")
             local symbol=""
             ;;
         "Full")
-            local symbol=" "
+            local symbol=""
             ;;
         "Unknown")
-            local symbol="..."
+            local symbol=""
             ;;
     esac
     echo -n "${bg_start}${fg_start}${symbol} ${percentage}%${fg_end}${bg_end}"

@@ -3,14 +3,17 @@
 switch="$1"
 user=$(whoami)
 
+EXTERNAL_MON=HDMI-1-1
+INTERNAL_MON=eDP-1-1
+
 case "$switch" in
   enable|-e)
-    xrandr --output HDMI-1 --left-of eDP-1 --auto
+    xrandr --output $EXTERNAL_MON --left-of $INTERNAL_MON --auto
     /home/${user}/.fehbg
     pkill dunst
     ;;
   disable|-d)
-    xrandr --output HDMI-1 --off
+    xrandr --output $EXTERNAL_MON --off
     /home/${user}/.fehbg
     pkill dunst
     ;;

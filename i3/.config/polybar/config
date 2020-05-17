@@ -12,8 +12,7 @@ bar-purple = #975CFF
 bar-red = #EF3895
 
 [bar/main]
-monitor = ${env:MONITOR:eDP-1}
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:eDP-1-1}
 width = 100%
 height = 22
 radius = 0.0
