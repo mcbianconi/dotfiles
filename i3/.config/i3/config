@@ -14,8 +14,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 set $default_terminal "kitty"
-#set $default_monitor "HDMI-1-1"
-set $default_monitor "eDP-1-1"
+set $default_monitor "HDMI-1-1"
+set $secondary_monitor "eDP-1-1"
 
 set $rofi_cmd "rofi -modi run,drun -show drun -show-icons"
 
@@ -24,7 +24,7 @@ set $rofi_cmd "rofi -modi run,drun -show drun -show-icons"
 font pango:Hack Nerd Font Mono 10
 floating_modifier $mod
 default_border pixel
-default_floating_border pixel
+default_floating_border pixel 2
 focus_follows_mouse no
 # window-specific settings 
 for_window [class="kitty"] title_format "<span font='10'>  </span><span font='8'>%title</span>"
@@ -148,14 +148,15 @@ client.background #551177
 
 # multi monitor setup
 bindsym $mod+shift+p move workspace to output right
-exec_always --no-startup-id xrandr --output $default_monitor --left-of eDP-1-1 --auto
+exec_always --no-startup-id xrandr --output $default_monitor --left-of $secondary_monitor --auto
 
 # assign workspaces to displays
 workspace 1 output $default_monitor
+workspace 3 output $secondary_monitor
+workspace 4 output $secondary_monitor
 
 # background
 exec --no-startup-id ~/.fehbg
-
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
