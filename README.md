@@ -1,3 +1,4 @@
+![Banner](https://github.com/mcbianconi/images/blob/master/banner.png)
 # dotfiles
 Dotfiles. Intended to be managed with GNU Stow 
 
@@ -22,3 +23,4 @@ If you like it or want to share some thoughs about it, you can find me on social
 
 # Screenshot
 ![screenshot](screenshot.png)
+![End Banner](https://github.com/mcbianconi/images/blob/master/readme-footer.png)
