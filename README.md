@@ -8,16 +8,16 @@ Dotfiles. Designed to be managed with GNU Stow
 git clone git@github.com:mcbianconi/dotfiles.git $HOME
 ```
 2. Change to dir
-```sh
+```bash
 cd $HOME/dotfiles
 ```
 3. Install what you want with gnu-stow, like
-```sh
+```bash
 stow i3
 stow vim
 ```
 ## Note about this repo
-This repository is all about my personal config, you may use it as your own risk. Feel free to fork and modify it!
+This repository is all about my personal config, you may use it at your own risk. Feel free to fork and modify it!
 
 If you like it or want to share some thoughs about it, you can find me on social media as `@mcbianconi` or just [mail me](mailto:murillo.bianconi@gmail.com)
 
@@ -33,6 +33,6 @@ If you like it or want to share some thoughs about it, you can find me on social
 ![Workspace](workspace.png)
 
 ## Password Manager script
-`Alt+p` [script](prod/scripts/quickpass.sh) in my i3 config
+`Alt+p` shortcupt in i3 config. Check the [script](prod/scripts/quickpass.sh)
 ![Password Manager Script](quickpass.png)
 ![End Banner](https://github.com/mcbianconi/images/blob/master/readme-footer.png)
