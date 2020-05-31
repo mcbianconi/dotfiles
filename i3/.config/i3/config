@@ -36,7 +36,8 @@ for_window [class="Spotify"] border pixel 0
 for_window [floating] move position center
 for_window [instance="keepassxc"] floating enable, border normal, resize set 1000 600, sticky enable, focus
 for_window [instance="quickpass"] floating enable, border normal, resize set 1000 600, sticky enable, focus
-for_window [instance="caja"] floating enable, border normal, resize set 1500 900, sticky enable, focus
+for_window [instance="caja"] floating enable, border normal, resize set 1500 900, move position center, focus
+for_window [instance="ranger"] floating enable, border normal, resize set 1500 900, move position center, focus
 for_window [instance="nm-connection-editor"] floating enable, border normal, resize set 1000 600, sticky enable, focus
 for_window [instance="term-scratchpad"] floating enable, border pixel, resize set 1200 800, move scratchpad, focus
 for_window [title="Android Emulator - Pixel_XL_API_R:5554"] floating enable
@@ -63,10 +64,10 @@ mode "$mode_system" {
 
 bindsym $mod+r mode "resize"
 mode "resize" {
-    bindsym l resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym j resize shrink height 10 px or 10 ppt
-    bindsym h resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 50 px or 50 ppt
+    bindsym l resize grow width 50 px or 50 ppt
+    bindsym j resize shrink height 50 px or 50 ppt
+    bindsym k resize grow height 50 px or 50 ppt
     bindsym Escape mode "default"
 }
 
@@ -131,9 +132,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -Urs "sysfs/backlight/i
 
 bindsym $mod+p exec --no-startup-id kitty --name quickpass --title quickpass $HOME/scripts/quickpass.sh
 bindsym $mod+period exec --no-startup-id nm-connection-editor
-bindsym $mod+comma exec --no-startup-id kitty --name bluetoothctl --title bluetoothctl bluetoothctl
-bindsym $mod+bracketleft exec --no-startup-id $HOME/scripts/screenshot.sh -s
-bindsym $mod+bracketright exec --no-startup-id $HOME/scripts/screenshot.sh -f
+bindsym $mod+comma exec --no-startup-id kitty --name ranger --title Ranger ranger
 bindsym $mod+backslash exec --no-startup-id $HOME/scripts/scratchpad.sh
 
 
