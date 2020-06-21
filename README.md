@@ -26,6 +26,9 @@ If you like it or want to share some thoughs about it, you can find me on social
 ## Vim
 ![Vim](vim.png)
 
+## Tmux
+![Tmux](tmux.png)
+
 ## ZSH Minimal prompt
 ![ZSH Prompt](zsh_prompt.png)
 
