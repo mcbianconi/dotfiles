@@ -23,15 +23,14 @@ set $rofi_cmd "rofi -modi run,drun -show drun -show-icons"
 
 font pango:Hack Nerd Font Mono 10
 floating_modifier $mod
-default_border pixel
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 focus_follows_mouse no
 # window-specific settings 
 for_window [class="kitty"] title_format "<span font='10'>  </span><span font='8'>%title</span>"
-for_window [class="google-chrome"] border pixel 1 title_format "<span font='10'>  </span><span font='8'>%title</span>"
+for_window [class="google-chrome"] border pixel 0 title_format "<span font='10'>  </span><span font='8'>%title</span>"
 for_window [class="Spotify"] title_format "<span font='10'>  </span><span font='8'>%title</span>"
-for_window [class="Slack"] title_format "<span font='10'>  </span><span font='8'>%title</span>"
-for_window [class="Slack"] border pixel 0
+for_window [class="Slack"] title_format "<span font='10'>  </span><span font='8'>%title</span>" border pixel 0
 for_window [class="Spotify"] border pixel 0
 for_window [floating] move position center
 for_window [instance="keepassxc"] floating enable, border normal, resize set 1000 600, sticky enable, focus
@@ -131,19 +130,32 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -Ars "sysfs/backlight/int
 bindsym XF86MonBrightnessDown exec --no-startup-id light -Urs "sysfs/backlight/intel_backlight" 5
 
 bindsym $mod+p exec --no-startup-id kitty --name quickpass --title quickpass $HOME/scripts/quickpass.sh
-bindsym $mod+period exec --no-startup-id nm-connection-editor
 bindsym $mod+comma exec --no-startup-id kitty --name ranger --title Ranger ranger
 bindsym $mod+backslash exec --no-startup-id $HOME/scripts/scratchpad.sh
 
 
-# colours
+# colors                border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
 
-client.focused #24D1E7 #24D1E7 #202124 #24D1E7 #24D1E7
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50 #5F676A
-client.unfocused #333333 #202124 #888888 #292D2E #202124
-client.urgent #FF28D4 #FF28D4 #FFFFFF #FF28D4 #FF28D4
-client.placeholder #000000 #0C0C0C #FFFFFF #000000 #0C0C0C
-client.background #551177
+#bar {
+#  colors {
+#    background #282A36
+#    statusline #F8F8F2
+#    separator  #44475A
+#
+#    focused_workspace  #44475A #44475A #F8F8F2
+#    active_workspace   #282A36 #44475A #F8F8F2
+#    inactive_workspace #282A36 #282A36 #BFBFBF
+#    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#    binding_mode       #FF5555 #FF5555 #F8F8F2
+#  }
+#}
+
 
 # multi monitor setup
 bindsym $mod+shift+p move workspace to output right

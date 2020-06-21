@@ -1,14 +1,15 @@
 alias vim=nvim
-alias ls='ls --color=auto'
+alias ls='ls -l --color=auto'
 alias grep='grep -i --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
-alias staff='tmuxinator start buser_staff'
-alias stop_staff='tmuxinator stop buser_staff'
-alias python=python3.7
-alias pip=pip3
+#alias python=python3.7
+#alias pip=pip3
 alias mux=tmuxinator
-alias bvenv='source /home/mcbianconi/code/buser/buser_django/venv/bin/activate'
 alias ipython=ipython3
+alias staff='PORT=3003 yarn dev:disable-mock'
+alias staff-mock='PORT=3003 yarn dev'
+alias parceiro='PORT=3001 yarn dev:disable-mock'
+alias parceiro-mock='PORT=3001 yarn dev'
