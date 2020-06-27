@@ -14,8 +14,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 set $default_terminal "kitty"
-set $default_monitor "HDMI-1-1"
-set $secondary_monitor "eDP-1-1"
+set $left_monitor "HDMI-1-1"
+set $right_monitor "eDP-1-1"
 
 set $rofi_cmd "rofi -modi run,drun -show drun -show-icons"
 
@@ -52,7 +52,6 @@ mode "$mode_system" {
 	bindsym l exec --no-startup-id /home/mcbianconi/scripts/i3exit.sh lock, mode "default"
 	bindsym s exec --no-startup-id /home/mcbianconi/scripts/i3exit.sh suspend, mode "default"
 	bindsym e exec --no-startup-id /home/mcbianconi/scripts/i3exit.sh logout, mode "default"
-	bindsym h exec --no-startup-id /home/mcbianconi/scripts/i3exit.sh hibernate, mode "default"
 	bindsym r exec --no-startup-id /home/mcbianconi/scripts/i3exit.sh reboot, mode "default"
 	bindsym Shift+s exec --no-startup-id /home/mcbianconi/scripts/i3exit.sh shutdown, mode "default"
 
@@ -159,12 +158,19 @@ client.background       #F8F8F2
 
 # multi monitor setup
 bindsym $mod+shift+p move workspace to output right
-exec_always --no-startup-id xrandr --output $default_monitor --left-of $secondary_monitor --auto
+exec_always --no-startup-id xrandr --output $left_monitor --left-of $right_monitor --auto
 
 # assign workspaces to displays
-workspace 1 output $default_monitor
-workspace 3 output $secondary_monitor
-workspace 4 output $secondary_monitor
+workspace 1 output $left_monitor
+workspace 2 output $left_monitor
+workspace 3 output $right_monitor
+workspace 4 output $right_monitor
+
+# Assign Workspaces:
+assign [class="vscodium"] $ws2
+assign [class="Slack"] $ws4
+assign [class="google-chrome"] $ws1
+assign [class="Mailspring"] $ws5
 
 # background
 exec --no-startup-id ~/.fehbg

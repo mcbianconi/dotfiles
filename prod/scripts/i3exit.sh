@@ -6,16 +6,13 @@ lock() {
 
 case "$1" in
     lock)
-        lock
+        i3lock-fancy
         ;;
     logout)
         i3-msg exit
         ;;
     suspend)
         systemctl suspend
-        ;;
-    hibernate)
-        systemctl hibernate
         ;;
     reboot)
         systemctl reboot
