@@ -7,7 +7,6 @@ bg_end="%{B-}"
 
 function get_weather {
 
-  local API_KEY="b7e7869d08msh05b080c32827e18p1bed46jsne889a50340e0"
   local LAT="-23.2493833"
   local LON="-45.9134777"
   local UNITS="metric"
