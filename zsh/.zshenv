@@ -2,7 +2,7 @@
 export EDITOR=vim
 export BROWSER=chromium
 export PATH=$PATH:$HOME/scripts
-
+export TERM=kitty
 # Golang
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/code/go

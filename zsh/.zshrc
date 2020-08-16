@@ -44,3 +44,7 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -f __init_nvm)" = function ]; then
 	}
 	for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
+
+
+# Direnv load
+#eval "$(direnv hook zsh)"

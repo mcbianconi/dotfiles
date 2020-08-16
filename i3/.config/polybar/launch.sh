@@ -8,6 +8,6 @@ while pgrep -u $UID -x polybar >/dev/null; do
     sleep 1;
 done
 
-mon='HDMI-1-1'
+#mon='HDMI-1-1'
 #mon='eDP-1-1'
 MONITOR=$mon polybar -r main 

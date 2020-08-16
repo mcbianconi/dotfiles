@@ -34,8 +34,7 @@ font-2 = GoMono Nerd Font:style=Regular:size=7;2
 font-3 = Consolas:size=7;2
 modules-left = i3
 modules-center =
-modules-right = format-1 bar_weather format-2 pulseaudio format-3 bar_load format-4 bar_wifi format-5 bar_battery format-6 bar_date format-7 bar_time
-;modules-right = bar_weather pulseaudio bar_load bar_wifi bar_battery bar_date format-7 bar_time
+modules-right = format-3 pulseaudio format-4 bar_wifi format-5 bar_battery format-6 bar_date format-7 bar_time
 tray-padding = 2
 tray-position = right
 tray-detached = false
@@ -84,14 +83,14 @@ content-font = 2
 [module/format-2]
 type = custom/text
 content = " "
-content-foreground = ${colors.bar-blue}
+content-foreground = ${colors.background}
 content-background = ${colors.bar-purple}
 content-font = 2
 
 [module/format-3]
 type = custom/text
 content = " "
-content-foreground = ${colors.bar-purple}
+content-foreground = ${colors.background}
 content-background = ${colors.bar-red}
 content-font = 2
 
@@ -153,11 +152,11 @@ type = internal/pulseaudio
 interval = 5
 use-ui-max = false
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors.bar-purple}
+format-volume-background = ${colors.bar-red}
 label-volume = %percentage%%
 label-volume-foreground = #202124
 label-muted = 
-label-muted-background = ${colors.bar-purple}
+label-muted-background = ${colors.bar-red}
 label-muted-foreground = #202124
 ramp-volume-0 = 
 ramp-volume-1 = 
