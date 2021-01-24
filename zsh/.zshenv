@@ -2,10 +2,11 @@
 export EDITOR=vim
 export BROWSER=chromium
 export PATH=$PATH:$HOME/scripts
-export TERM=kitty
+
 # Golang
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/code/go
+export PATH="$GOPATH/bin:$PATH"
 
 # Flutter
 export FLUTTER_HOME=/opt/flutter
@@ -27,5 +28,5 @@ fi
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
 source /usr/local/bin/virtualenvwrapper_lazy.sh

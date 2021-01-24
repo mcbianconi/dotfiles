@@ -48,3 +48,6 @@ fi
 
 # Direnv load
 #eval "$(direnv hook zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/terraform/terraform terraform
