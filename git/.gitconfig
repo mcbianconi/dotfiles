@@ -1,0 +1,14 @@
+[user]
+	name = Murillo
+	email = murillo.bianconi@gmail.com
+[core]
+	editor = code --wait
+	autocrlf = input
+[merge]
+	tool = code
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff
