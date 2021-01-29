@@ -1,0 +1,24 @@
+name: buser
+root: ~/code/buserfin
+
+on_project_stop: docker stop $(docker ps -a -q)
+
+pre_window: source ~/.virtualenvs/buserfin/bin/activate && nvm use 12  
+
+startup_window: backend
+
+startup_pane: 1
+
+windows:
+  - frontend:
+      layout: tiles
+      panes:
+        - git status
+        - cd frontend && API_MOCK=0 npm run dev
+  - backend:
+      layout: main-vertical
+      panes:
+        - git status
+        - python ./manage.py runserver
+        - source dev.sh && dkpgnginx 
+        - ./manage.py test --parallel $(nproc --all) --keepdb
