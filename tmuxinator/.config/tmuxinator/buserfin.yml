@@ -3,7 +3,7 @@ root: ~/code/buserfin
 
 on_project_stop: docker stop $(docker ps -a -q)
 
-pre_window: source ~/.virtualenvs/buserfin/bin/activate && nvm use 12  
+pre_window: source ~/code/buserfin/.venv/bin/activate && nvm use 12  
 
 startup_window: backend
 

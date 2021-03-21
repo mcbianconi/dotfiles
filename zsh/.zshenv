@@ -1,6 +1,8 @@
 # Personal
 export EDITOR=nvim
 export BROWSER=google-chrome
+export PATH=$PATH:$HOME/go/bin
+export TERM=xterm-256color
 
 # Work Related env
 if [ -f ~/.bash_aliases ]; then

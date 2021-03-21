@@ -3,7 +3,7 @@ root: ~/code/buser_django
 
 on_project_stop: docker stop $(docker ps -a -q)
 
-pre_window: source ~/.virtualenvs/buser/bin/activate
+pre_window: source .venv/bin/activate
 
 startup_window: frontend
 
@@ -19,4 +19,4 @@ windows:
         - git status
         - python ./manage.py runserver
         - docker-compose -f docker/compose/nginx.yaml up
-        - source dev.sh && dkdb 
+        - inv dkdb 
