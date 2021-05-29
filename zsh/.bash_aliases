@@ -3,7 +3,7 @@ alias ls='ls -l --color=auto'
 alias grep='grep -i --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -alF'
+alias ll='ls -alh'
 alias la='ls -A'
 alias mux='tmuxinator.ruby2.7'
 alias ipython=ipython3
@@ -21,3 +21,9 @@ alias buser='PORT=3000 yarn dev:disable-mock'
 alias buser:mock='PORT=3000 yarn dev:all'
 alias buser:teste='./manage.py test core --parallel 8 --keep'
 alias buser:teste-wipe='./manage.py test core --parallel 8'
+
+
+alias sshrenew='python ~/code/pritunl-zero-client/ssh_client.py; ssh-add -D; cp ~/.ssh/bast-cert00.pub ~/.ssh/bast-cert.pub; ssh-add ~/.ssh/bast; cp ~/.ssh/bast-cert01.pub ~/.ssh/bast-cert.pub; ssh-add ~/.ssh/bast; ssh-add'
+
+alias cdd='cd ~/code/buser_django && source .venv/bin/activate'
+alias ptt='pytest -n auto --durations=10 -q -p no:warnings'
