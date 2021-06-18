@@ -2,7 +2,8 @@
 	name = Murillo
 	email = murillo.bianconi@gmail.com
 [core]
-	editor = code --wait
+	#editor = code --wait
+	editor = vim
 	autocrlf = input
 [merge]
 	tool = code
