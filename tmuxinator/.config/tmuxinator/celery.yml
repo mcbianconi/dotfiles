@@ -1,0 +1,16 @@
+name: celery
+startup_window: celery
+startup_pane: 1
+windows:
+  - celery:
+      layout: main-vertical
+      panes:
+        - machine:
+          - ssh ubuntu@gitlab.buser.com.br
+          - ./sshcelery
+          - docker ps
+        - monitor:
+          - ssh ubuntu@gitlab.buser.com.br
+          - ./sshcelery
+          - htop
+          

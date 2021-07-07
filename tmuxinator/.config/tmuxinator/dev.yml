@@ -1,0 +1,10 @@
+name: devdb
+root: ~/code/buser_django
+pre_window: source .venv/bin/activate
+startup_window: db
+startup_pane: 1
+windows:
+  - db:
+      layout: main-vertical
+      panes:
+        - inv dkdb 

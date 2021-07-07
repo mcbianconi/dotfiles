@@ -1,0 +1,8 @@
+name: redis
+root: ~/code
+startup_window: redis
+windows:
+  - redis:
+    - redis-cli
+  - server:
+    - redis-server
